@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitBit 19</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header><img src="./mmazon-logo.png" alt="Company Logo Here" /></header>
+    <div id="container">
+        <div id="watchBand">
+            <img id="band" src="./black.png" alt="black fitbit watch" />
+            <div id="time-msg"></div>
+            <div id="heart-rate-msg">
+                <div id="heart">
+                    <img src="./heartbeat.png" alt="heart beat" />
+                </div>
+                <p>78</p>
+            </div>
+        </div>
+        <div id="data">
+            <h1>FreshBit 21 - The Smartest Watch</h1>
+            <p id="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo corporis suscipit ad quia, earum excepturi.
+            </p>
+            <h4>Select Color</h4>
+            <div id="color-container">
+                <p class="colors" onclick="changeColor(this.id)" id="black"></p>
+                <p class="colors" onclick="changeColor(this.id)" id="red"></p>
+                <p class="colors" onclick="changeColor(this.id)" id="blue"></p>
+                <p class="colors" onclick="changeColor(this.id)" id="purple"></p>
+                <p class="colors" onclick="changeColor(this.id)" id="pink"></p>
+            </div>
+            <h4>Features</h4>
+            <div id="feature-container">
+                <span class="features" onclick="changeFeature(this.id)" id="time">Time</span
+          >
+          <span
+            class="features"
+            onclick="changeFeature(this.id)"
+            id="heart-rate"
+            >Heart Rate</span
+          >
+        </div>
+        <button id="buy-now">BUY NOW</button>
+      </div>
+    </div>
+    <script>
+      function changeColor(color) {
+        var colorOptions = document.getElementsByClassName("colors");
+        for (i of colorOptions) {
+          i.style.border = "none";
+        }
+        document.getElementById(color).style.border = "solid orange 2px";
+        document.getElementById("band").src = color.concat(".png");
+      }
+
+      function changeFeature(feature) {
+        if (feature === "time") {
+          document.getElementById("heart-rate-msg").style.display = "none";
+          document.getElementById("time-msg").style.display = "block";
+        } else {
+          document.getElementById("heart-rate-msg").style.display = "block";
+          document.getElementById("time-msg").style.display = "none";
+        }
+      }
+
+      function addTimer() {
+        var date = new Date();
+        document.getElementById("time-msg").innerHTML = date
+          .toTimeString()
+          .substring(0, 8);
+      }
+      setInterval(addTimer, 1000);
+    </script>
+  </body>
+</html>

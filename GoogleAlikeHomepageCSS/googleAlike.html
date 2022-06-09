@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google By Gaurav</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="googleAlike.css" type="text/css">
+
+</head>
+
+<body>
+    <header>
+        <nav id="navigationBar">
+            <a class="menu-items" href="#">Gmail</a>
+            <a class="menu-items" href="#">Images</a>
+            <script type="text/javascript">
+                function clickEvent() {
+                    document.getElementsByClassName("appStore")[0].style.display = "block";
+                }
+
+                function out() {
+                    document.getElementsByClassName("appStore")[0].style.display = "none";
+                }
+            </script>
+            <div style="display: inline;" onclick="clickEvent()" onmouseleave="out()">
+                <i id="dropdown-menu" class="material-icons">apps</i>
+                <div class="appStore">
+                    <div id="appItem">
+                        <img style="border-radius: 100%;" src="https://lh3.googleusercontent.com/ogw/ADea4I54NbcY6cRB6hxk3FlZ01RkMzrILzp0b68xKaLUUVo=s32-c-mo" alt="google profile">
+                        <p>Profile</p>
+                    </div>
+                    <div id="appItem">
+                        <img src="http://pluspng.com/img-png/google-logo-png-open-2000.png" alt="google search">
+                        <p>Search</p>
+                    </div>
+                    <div id="appItem">
+                        <img src="http://pluspng.com/img-png/google-maps-png-google-maps-icon-1600.png" alt="google maps">
+                        <p>Maps</p>
+                    </div>
+                    <div id="appItem">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="google drive">
+                        <p>Drive</p>
+                    </div>
+
+                    <div id="appItem">
+                        <img src="https://blogs.acu.edu/innovation_foundry/files/2017/06/google_photos1600.png" alt="google photos">
+                        <p>Photos</p>
+                    </div>
+                    <div id="appItem">
+                        <img src="https://i.pinimg.com/originals/09/96/92/099692d1d651d51b7caf3040fce0f748.png" alt="google keep">
+                        <p>Keep</p>
+                    </div>
+                </div>
+            </div>
+            <img id="profilePic" src="https://lh3.googleusercontent.com/ogw/ADea4I54NbcY6cRB6hxk3FlZ01RkMzrILzp0b68xKaLUUVo=s32-c-mo" alt="profile pic">
+        </nav>
+
+        <main>
+            <section class="mainSection">
+                <div>
+                    <img id="googlePhoto" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google photo">
+                </div>
+                <div id="inputDiv">
+                    <img id="searchIcon" src="outline_search_black_24dp.png" alt="search">
+                    <input id="searchBox" type="text">
+                </div>
+                <div>
+                    <span>Google Search</span>
+                    <span>I'm Feeling Lucky</span>
+                </div>
+            </section>
+
+        </main>
+    </header>
+</body>
+
+</html>

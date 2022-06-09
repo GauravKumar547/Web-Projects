@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&amp;subset=cyrillic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+    <title>Final website</title>
+</head>
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        max-width: 100vw;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        max-width: 100vw;
+        display: block;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+    }
+    
+    #section-1 {
+        width: 100%;
+        max-width: inherit;
+        height: 100vh;
+        background-image: url("resources/landing-background.png");
+        background-size: 100% 111%;
+        background-repeat: no-repeat;
+    }
+    
+    nav {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        height: 11vh;
+        background-color: white;
+        font-family: "Poppins", sans-serif;
+        width: 100%;
+        max-width: inherit;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+    }
+    
+    #logo-image {
+        transform: scale(0.63);
+        margin-left: 16px;
+    }
+    
+    .menu-items {
+        color: black;
+        font-weight: 600;
+        font-size: 14px;
+        margin-right: 20px;
+    }
+    
+    .menu-items:hover {
+        cursor: pointer;
+    }
+    
+    .menu-items:first-of-type:hover>.dropdown {
+        display: block;
+    }
+    
+    .dropdown-img {
+        position: relative;
+        top: 1px;
+        align-items: center;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .dropdown {
+        font-family: "Poppins", sans-serif;
+        position: absolute;
+        width: 200px;
+        right: 28%;
+        top: 65%;
+        padding: 10px 25px;
+        box-sizing: border-box;
+        border-top: 2px solid rgb(170, 210, 54);
+        background-color: white;
+        box-shadow: 0 2px 5px #ccc;
+        display: none;
+    }
+    
+    .dropDownItem:nth-child(1) {
+        padding-bottom: 0;
+    }
+    
+    .dropDownItem:nth-child(3),
+    .dropDownItem:nth-child(2) {
+        border-top: rgba(0, 0, 0, 0.555) solid 1pt;
+        padding-top: 5px;
+        padding-bottom: 0;
+    }
+    
+    #buy-now {
+        font-size: 12px;
+        font-weight: 600;
+        color: white;
+        background-color: rgb(170, 210, 54);
+        padding: 9px 34px;
+        border-radius: 4px;
+        margin-right: 36px;
+        border: none;
+    }
+    
+    #buy-now:hover {
+        cursor: pointer;
+    }
+    
+    #dataSec1 {
+        height: inherit;
+        width: 100%;
+        max-width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10% 0 10%;
+    }
+    
+    #dataSec1>h1 {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        font-size: 44px;
+        width: 80%;
+        font-weight: 600;
+        letter-spacing: 8.8px;
+        line-height: 1.2;
+    }
+    
+    #dataSec1>p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        text-align: center;
+        width: 80%;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+        color: #8b8b99;
+    }
+    
+    #section-2 {
+        width: 100%;
+        max-width: inherit;
+        margin-bottom: 0;
+        display: grid;
+        grid-template-areas: "auto auto auto auto";
+    }
+    
+    #step1 {
+        background-color: #5acda6;
+    }
+    
+    #step2 {
+        background-color: #91ac41;
+    }
+    
+    #step3 {
+        background-color: #e4b476;
+    }
+    
+    #step4 {
+        background-color: #f69dad;
+    }
+    
+    .icon {
+        font-size: 96px;
+        width: 96px;
+        margin-bottom: 0;
+        transition-property: transform;
+        transition-duration: 500ms;
+    }
+    
+    #section-2>div {
+        text-align: center;
+        padding: 115px 55px 80px 55px;
+        color: white;
+    }
+    
+    #section-2>div:hover>.icon {
+        transform: scale(1.2);
+    }
+    
+    .step-label {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+    
+    .step-desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+    }
+    
+    #section-3 {
+        width: 100%;
+        max-width: inherit;
+        background-color: #f7eee2;
+        text-align: center;
+        padding: 72px 0px;
+    }
+    
+    #fresh-food-text {
+        position: relative;
+        color: #91ac41;
+        font-size: 24px;
+        font-family: "Caveat", cursive;
+        margin: 0;
+        top: 35px;
+    }
+    
+    h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 44px;
+        font-weight: 600;
+    }
+    
+    #section-3>#desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #8b8b99;
+        letter-spacing: 0.5px;
+        margin-top: -25px;
+    }
+    
+    #sec3-icon-data {
+        margin-top: 80px;
+        margin-left: 80px;
+        display: grid;
+        grid-template-areas: "auto auto auto auto";
+        justify-content: space-between;
+    }
+    
+    #sec3-icon-data>div {
+        margin: 0 40px;
+    }
+    
+    .sec3-icon {
+        background-color: #e3b375;
+        font-size: 60px;
+        padding: 40px;
+        border-radius: 50%;
+        color: white;
+        transition-property: transform;
+        transition-duration: 500ms;
+    }
+    
+    #sec3-icon-data>div:hover>.sec3-icon {
+        transform: scale(1.1);
+    }
+    
+    .sec3-label {
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .sec3-desc {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        color: #8b8b99;
+    }
+    
+    #section-4 {
+        width: 100%;
+        max-width: inherit;
+        text-align: center;
+        padding: 72px 0px;
+    }
+    
+    #section-4>#desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #8b8b99;
+        letter-spacing: 0.5px;
+        margin-top: -25px;
+        padding: 0 330px 40px 330px;
+    }
+    
+    #test-cards-wrapper {
+        display: flex;
+        flex-direction: row;
+        padding: 0px 100px;
+        justify-content: space-around;
+    }
+    
+    .test-card {
+        max-width: 30%;
+        text-align: center;
+        border: none;
+        background-color: #f5f6fb;
+        border-top-left-radius: 45px;
+        border-bottom-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+        padding: 40px 30px 20px 30px;
+        box-sizing: border-box;
+        transition-property: box-shadow;
+        transition-duration: 500ms;
+    }
+    
+    .test-card:hover {
+        box-shadow: 1pt 1pt 30px #b9b9c0;
+    }
+    
+    .test-card:nth-of-type(2) {
+        margin: 10px 0px;
+    }
+    
+    .test-card-img {
+        border-radius: 50%;
+        width: 80px;
+    }
+    
+    .card-msg {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        font-style: Italic;
+        color: #8b8b99;
+    }
+    
+    .card-author {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
+    
+    .author-work {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        color: #8b8b99;
+        font-style: italic;
+        margin: 0px;
+    }
+    
+    #section-5 {
+        width: 100%;
+        max-width: inherit;
+        display: flex;
+        max-height: 90vh;
+    }
+    
+    #section-5>img {
+        max-width: 67%;
+    }
+    
+    #section-5 #desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #8b8b99;
+        letter-spacing: 0.5px;
+        margin-top: -25px;
+        margin-bottom: 45px;
+    }
+    
+    #right {
+        max-width: 33%;
+        background-image: url("https://edyoda.s3.ap-south-1.amazonaws.com/public/strawberry-white.png");
+        background-size: cover;
+        padding: 50px 105px;
+    }
+    
+    #email {
+        min-width: 90%;
+        height: 47px;
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 550;
+        padding-left: 12px;
+        color: #8b8b99;
+    }
+    
+    #submit {
+        height: 50px;
+        width: 70%;
+        background-color: #f69dad;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    #submit:hover {
+        background-color: white;
+        color: #f69dad;
+        border: 1px solid #f69dad;
+        cursor: pointer;
+    }
+    
+    #section-6 {
+        width: 100%;
+        max-width: inherit;
+        margin: 5px 0px;
+        display: flex;
+        flex-direction: row;
+        padding: 80px 170px;
+        justify-content: space-between;
+        background-color: #f6fcfa;
+    }
+    
+    #section-6>div {
+        text-align: center;
+    }
+    
+    #section-6>div>h1 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .sec6-desc {
+        margin-top: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #57e3b5;
+        letter-spacing: 0.5px;
+    }
+    
+    #section-7 {
+        width: 100%;
+        max-width: inherit;
+        text-align: center;
+        margin-bottom: -80px;
+    }
+    
+    #section-7>h1 {
+        color: #8b8b99;
+        font-weight: 400;
+    }
+    
+    hr {
+        width: 100px;
+        background-color: orange;
+        height: 1px;
+        border: none;
+    }
+    
+    embed {
+        height: 60vw;
+        width: 60vw;
+        border: none;
+        padding: 0;
+        margin-top: -130px;
+    }
+    
+    #section-8 {
+        width: 100%;
+        max-width: inherit;
+        display: flex;
+    }
+    
+    #section-8>.contact-us {
+        max-width: 45%;
+        margin-left: 90px;
+    }
+    
+    #contact-us {
+        max-width: 45%;
+        margin-left: 90px;
+    }
+    
+    .contact-desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #8b8b99;
+        letter-spacing: 0.5px;
+        margin: 5px 0;
+    }
+    
+    #meet {
+        max-width: 35%;
+        margin: 0px 90px;
+    }
+    
+    #meet form input {
+        width: 90%;
+        height: 50px;
+        border: 1px #8b8b99 solid;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    textarea {
+        width: 90%;
+        border: 1px #8b8b99 solid;
+        padding-top: 10px;
+        padding-left: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    #meet form #buy-now {
+        width: 180px;
+        border: none;
+    }
+    
+    footer {
+        width: 100%;
+        max-width: inherit;
+        margin-top: 100px;
+        text-align: center;
+        height: 50px;
+        background-color: black;
+        color: white;
+        padding-top: 30px;
+    }
+    
+    @media screen and (max-width: 900px) {
+        html {
+            box-sizing: border-box;
+            max-width: 100vw;
+        }
+        body {
+            box-sizing: border-box;
+            max-width: 100vw;
+        }
+        .menu-items {
+            display: none;
+        }
+        #section-1 {
+            max-height: 100vh;
+        }
+        #section-2 {
+            grid-template-areas: "auto" "auto" "auto" "auto" "auto";
+        }
+        #sec3-icon-data {
+            margin-right: 1vh;
+            margin-left: 1vh;
+            grid-template-areas: "auto" "auto" "auto" "auto" "auto";
+        }
+        #section-4>#desc {
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+        #test-cards-wrapper {
+            flex-direction: column;
+            padding: 0px 50px;
+        }
+        .test-card {
+            min-width: 90%;
+        }
+        #section-5 {
+            box-sizing: border-box;
+            flex-direction: column;
+            max-width: 100%;
+        }
+        #section-5 div,
+        #section-5 img {
+            box-sizing: border-box;
+            min-width: 100vw;
+            max-width: 100vw;
+        }
+        #section-6 {
+            flex-direction: column;
+            padding: 0;
+            align-items: center;
+        }
+        #section-7 {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        #section-8 {
+            flex-direction: column;
+            max-width: inherit;
+            align-items: baseline;
+        }
+        embed {
+            height: 60vw;
+            width: 60vw;
+            border: none;
+            padding: 0;
+            margin-top: 0;
+        }
+        #section-8>div {
+            box-sizing: border-box;
+            width: fit-content;
+            max-width: inherit;
+        }
+    }
+</style>
+
+<body>
+    <section id="section-1">
+        <nav>
+            <img id="logo-image" src="https://mobirise.com/extensions/organicamp/assets/images/logo1.jpg" alt="logo-image" />
+            <div>
+                <span class="menu-items">Demo Pages<img
+              class="dropdown-img"
+              src="resources\dropdown_icon.png"
+              alt="dropdown_icon"
+            />
+            <div class="dropdown">
+              <p class="dropDownItem">Menu item1</p>
+              <p class="dropDownItem">Menu item2</p>
+              <p class="dropDownItem">Menu item3</p>
+            </div>
+          </span>
+                <span class="menu-items">Watch Video</span>
+                <span class="menu-items">Blocks<img
+              class="dropdown-img"
+              src="resources\dropdown_icon.png"
+              alt="dropdown_icon"
+          /></span>
+                <button id="buy-now" type="button">BUY NOW</button>
+            </div>
+        </nav>
+        <div id="dataSec1">
+            <h1>Vegetarian Store Website</h1>
+            <p>
+                With nutrition, all the vital functions of the body are connected. It is the source of the development of tissues and cells, their constant renewal, the saturation of man with energy.
+            </p>
+        </div>
+    </section>
+
+    <section id="section-2">
+        <div id="step1">
+            <i class="fa fa-cut icon"></i>
+            <p class="step-label">Step 01.</p>
+            <p class="step-desc">
+                Vegetables are an integral part of the human diet. They are extremely useful because of the high content of carbohydrates, various acids, vitamins and active elements in the form, easy for digestion.
+            </p>
+        </div>
+        <div id="step2">
+            <i class="fa fa-paint-brush icon"></i>
+            <p class="step-label">Step 01.</p>
+            <p class="step-desc">
+                Fresh tomatoes are ideal for replenishing the loss of minerals. These vegetables contain a lot of acids that our body needs for full-fledged work.
+            </p>
+        </div>
+        <div id="step3">
+            <i class="fa fa-shopping-bag icon"></i>
+            <p class="step-label">Step 01.</p>
+            <p class="step-desc">
+                In the content of vitamin C, sweet peppers are superior to lemons and even black currants! The greatest amount of vitamin is contained around the stalk, that is, in the part of the product that is usually cut during cleaning.
+            </p>
+        </div>
+        <div id="step4">
+            <i class="far fa-smile icon"></i>
+            <p class="step-label">Step 01.</p>
+            <p class="step-desc">
+                If you sometimes eat hot chili peppers, this will help normalize cerebral circulation, ease the condition with bronchial asthma, cough, sore throat, flu.
+            </p>
+        </div>
+    </section>
+    <section id="section-3">
+        <p id="fresh-food-text">Fresh Food</p>
+        <h1>Our Vegan Store!</h1>
+        <p id="desc">Radish contains a lot of fiber, pectin and mineral salts</p>
+        <div id="sec3-icon-data">
+            <div>
+                <i class="fa fa-camera sec3-icon"></i>
+                <p class="sec3-label">Fresh Vegetables</p>
+                <p class="sec3-desc">
+                    Use for cooking several types of vegetable oil.
+                </p>
+            </div>
+            <div>
+                <i class="fa-rocket fa sec3-icon"></i>
+                <p class="sec3-label">High Quality</p>
+                <p class="sec3-desc">
+                    This is the best source of essential fatty acids for the body.
+                </p>
+            </div>
+
+            <div>
+                <i class="fab fa-twitter sec3-icon"></i>
+                <p class="sec3-label">Sale</p>
+                <p class="sec3-desc">
+                    It is very good, if in the kitchen there will always be several bottles with different oils.
+                </p>
+            </div>
+            <div>
+                <i class="fab fa-weixin sec3-icon"></i>
+                <p class="sec3-label">Best Price</p>
+                <p class="sec3-desc">
+                    Remember that unrefined oils are not suitable for heat treatment.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="section-4">
+        <p id="fresh-food-text">Fresh Food</p>
+        <h1>Our Vegan Store!</h1>
+        <p id="desc">
+            According to experts, any habit can be formed in 21 days. The same statement applies to healthy eating.
+        </p>
+        <div id="test-cards-wrapper">
+            <div class="test-card">
+                <img class="test-card-img" src="https://mobirise.com/extensions/organicamp/assets/images/face5.jpg" alt="test-card-image" />
+                <p class="card-msg">
+                    Sales consultants are very polite. Many of the products have tried and are ready to prompt and recommend to customers. The staff shows that they completely share the philosophy of proper nutrition, if you can say so.
+                </p>
+                <p class="card-author">VERONICA KING</p>
+                <p class="author-work">Cook</p>
+            </div>
+            <div class="test-card">
+                <img class="test-card-img" src="https://mobirise.com/extensions/organicamp/assets/images/face6.jpg" alt="test-card-image" />
+                <p class="card-msg">
+                    The assortment is very wide. From useful organic oils, cereals and teas to specific products for vegetarians, such as sausages and pies without meat.
+                </p>
+                <p class="card-author">JIM CASH</p>
+                <p class="author-work">Seller</p>
+            </div>
+            <div class="test-card">
+                <img class="test-card-img" src="https://mobirise.com/extensions/organicamp/assets/images/face7.jpg" alt="test-card-image" />
+                <p class="card-msg">
+                    I want to say a huge thank you to the management of the store and all its employees, I'm not a vegetarian, it would seem that the store is not for me, but it's not so, any person who comes here will find something useful.
+                </p>
+                <p class="card-author">PETER GOODMAN</p>
+                <p class="author-work">Manager</p>
+            </div>
+        </div>
+    </section>
+    <section id="section-5">
+        <img src="https://mobirise.com/extensions/organicamp/assets/images/19.jpg" alt="left" />
+        <div id="right">
+            <h1>Follow Us</h1>
+            <p id="desc">
+                A wide range of products; many unusual and tasty products; courteous staff.
+            </p>
+            <input id="email" type="email" placeholder="Your Email" />
+            <button id="submit">SUBSCRIBE</button>
+        </div>
+    </section>
+    <section id="section-6">
+        <div>
+            <h1>7</h1>
+            <p class="sec6-desc">Year of experiences</p>
+        </div>
+        <div>
+            <h1>123k</h1>
+            <p class="sec6-desc">Happy Customers</p>
+        </div>
+        <div>
+            <h1>72k</h1>
+            <p class="sec6-desc">100% Satisfaction</p>
+        </div>
+        <div>
+            <h1>13k</h1>
+            <p class="sec6-desc">Detox Smoothies</p>
+        </div>
+    </section>
+    <section id="section-7">
+        <h1>Vimeo Video</h1>
+        <hr />
+        <div>
+            <embed src="https://player.vimeo.com/video/275412279" />
+        </div>
+    </section>
+    <section id="section-8">
+        <div id="contact-us">
+            <p id="fresh-food-text">Contact Us</p>
+            <h1>Address Information</h1>
+            <p class="contact-desc">
+                Overeating is one of the most common causes of overweight and digestive problems.
+            </p>
+            <h2>London Store</h2>
+            <p class="contact-desc">Roeterseiland Campus Building E</p>
+            <p class="contact-desc">6th floor London</p>
+            <p class="contact-desc">Monday to Friday : 9am to 8pm</p>
+            <p class="contact-desc">examplemail.mail.com</p>
+            <h2>Berlin Store</h2>
+            <p class="contact-desc">Roeterseiland Campus Building E</p>
+            <p class="contact-desc">6th floor London</p>
+            <p class="contact-desc">Monday to Friday : 9am to 8pm</p>
+            <p class="contact-desc">examplemail.mail.com</p>
+        </div>
+        <div id="meet">
+            <p id="fresh-food-text">Meet Our Team</p>
+            <h1>Get In Touch</h1>
+            <p class="contact-desc">
+                The task of proper nutrition - to remove from the diet harmful food and enrich it useful.
+            </p>
+            <form>
+                <input type="text" placeholder="Name" /><br />
+                <input type="tel" placeholder="Phone" /><br />
+                <input type="text" placeholder="Subject" /><br />
+                <input type="email" placeholder="E-mail" /><br />
+                <textarea name="message-area" id="message-area" cols="30" placeholder="Message" rows="5"></textarea
+          ><br />
+          <input type="submit" id="buy-now" value="SUBMIT NOW" />
+        </form>
+      </div>
+    </section>
+    <footer>© Copyright 2018 Mobirise - All Rights Reserved</footer>
+  </body>
+</html>

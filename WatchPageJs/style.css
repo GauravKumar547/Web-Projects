@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, Sans Pro;
+}
+
+header {
+    box-sizing: border-box;
+    min-height: 60px;
+    max-height: 60px;
+    background-color: #232f3e;
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+}
+
+header img {
+    height: 60px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 50px 100px;
+}
+
+#watchBand {
+    max-width: fit-content;
+}
+
+div img {
+    width: 420px;
+}
+
+#heart-rate-msg {
+    z-index: 1;
+    position: absolute;
+    top: 265px;
+    min-width: 80px;
+    left: 267px;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    display: none;
+}
+
+#heart {
+    box-sizing: border-box;
+    width: 80px;
+    height: 85px;
+}
+
+#heart img {
+    width: 74px;
+    color: #ca3d22;
+    animation: heartBeat;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heartBeat {
+    from {
+        width: 74px;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+#time-msg {
+    z-index: 1;
+    position: absolute;
+    top: 300px;
+    left: 260px;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+#data {
+    padding-top: 17px;
+    max-width: 600px;
+}
+
+#desc {
+    max-width: 90%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.colors {
+    margin: 0 5px;
+    min-width: 50px;
+    min-height: 35px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#color-container {
+    margin-top: 15px;
+    display: flex;
+    margin-bottom: 35px;
+}
+
+#black {
+    background-color: #23211f;
+}
+
+#pink {
+    background-color: #e9c7be;
+}
+
+#blue {
+    background-color: #565681;
+}
+
+#purple {
+    background-color: #8a5362;
+}
+
+#red {
+    background-color: #ca3d22;
+}
+
+#feature-container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.features {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#buy-now {
+    border: none;
+    padding: 13px 25px;
+    margin-top: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #ff9900;
+    font-weight: 600;
+}
+
+.colors:hover,
+.features:hover,
+#buy-now:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="calculatorBody">
+        <input type="text" name="expr" id="expr" />
+        <div id="keypad">
+            <p class="numbers" onclick="addToText(7)">7</p>
+            <p class="numbers" onclick="addToText(8)">8</p>
+            <p class="numbers" onclick="addToText(9)">9</p>
+            <p class="numbers" onclick="addToText('+')">+</p>
+
+            <p class="numbers" onclick="addToText(4)">4</p>
+            <p class="numbers" onclick="addToText(5)">5</p>
+            <p class="numbers" onclick="addToText(6)">6</p>
+            <p class="numbers" onclick="addToText('-')">-</p>
+
+            <p class="numbers" onclick="addToText(1)">1</p>
+            <p class="numbers" onclick="addToText(2)">2</p>
+            <p class="numbers" onclick="addToText(3)">3</p>
+            <p class="numbers" onclick="addToText('*')">*</p>
+
+            <p class="numbers" onclick="expr.value=''">C</p>
+            <p class="numbers" onclick="addToText(0)">0</p>
+            <p class="numbers" onclick="expr.value = eval(expr.value)">=</p>
+            <p class="numbers" onclick="addToText('/')">/</p>
+        </div>
+    </div>
+    <script>
+        function addToText(x) {
+            document.getElementById("expr").value =
+                document.getElementById("expr").value + x;
+        }
+    </script>
+</body>
+
+</html>
