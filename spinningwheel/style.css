@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+#popup {
+    background-color: #34495e;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    top: 100vh;
+    transform: translate(13%, 13%);
+    opacity: 0;
+    animation: comeup 1s ease-out 500ms 1 forwards;
+}
+
+.container {
+    left: -152px;
+    z-index: 2;
+    width: 500px;
+    height: 500px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 15px solid #dde;
+    position: relative;
+    overflow: hidden;
+    animation-fill-mode: backwards;
+    transition: all ease 0s;
+}
+
+.container div {
+    height: 50%;
+    width: 200px;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    writing-mode: sideways-lr;
+    transform-origin: bottom;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #fff;
+    left: 135px;
+}
+
+.container .div1 {
+    background-color: #273586;
+    left: 50%;
+}
+
+.container .div2 {
+    background-color: #8595f0;
+    transform: rotate(45deg);
+}
+
+.container .div3 {
+    background-color: #273586;
+    transform: rotate(90deg);
+}
+
+.container .div4 {
+    background-color: #8595f0;
+    transform: rotate(135deg);
+}
+
+.container .div5 {
+    background-color: #273586;
+    transform: rotate(180deg);
+}
+
+.container .div6 {
+    background-color: #8595f0;
+    transform: rotate(225deg);
+}
+
+.container .div7 {
+    background-color: #273586;
+    transform: rotate(270deg);
+}
+
+.container .div8 {
+    background-color: #8595f0;
+    transform: rotate(315deg);
+}
+
+.arrow {
+    z-index: 3;
+    position: absolute;
+    top: 45%;
+    left: 47%;
+}
+
+#popup::before {
+    content: "";
+    position: absolute;
+    left: 44%;
+    top: 45%;
+    margin-left: 8px;
+    z-index: 1;
+    border: 36px solid goldenrod;
+}
+
+.arrow span {
+    display: inline-block;
+    border-top: 36px solid transparent;
+    border-bottom: 36px solid transparent;
+    border-right: 45px solid gold;
+    box-shadow: 2px 0px 0px rgb(110, 105, 92);
+    border-left: 5px;
+}
+
+#spin {
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #8595f0;
+    text-transform: uppercase;
+    border: 8px solid #fff;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    width: 80px;
+    height: 80px;
+    font-family: sans-serif;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(500deg);
+    }
+}
+
+.message {
+    color: white;
+}
+
+#winning {
+    position: absolute;
+    border-radius: 10px;
+    top: 150px;
+    background-color: #f5f0f0;
+    width: 50%;
+    height: 50%;
+    z-index: 10;
+    text-align: center;
+    padding: 70px 100px;
+    line-height: 30px;
+    display: none;
+}
+
+#ok {
+    height: 30px;
+    width: 60px;
+    border: solid 2px blue;
+    border-radius: 7px;
+    font-weight: bolder;
+    background-color: rgb(2, 172, 240);
+    color: white;
+    margin-top: 20px;
+}
+
+#winning-message {
+    color: #6e6e6e;
+    font-weight: bold;
+}
+
+.close {
+    font-size: 20px;
+    z-index: 2;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: #34495e;
+    border: none;
+    color: white;
+}
+
+#ok:hover {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+@keyframes comeup {
+    100% {
+        opacity: 1;
+        top: 0vh;
+    }
+}
